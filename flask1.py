@@ -38,7 +38,7 @@ def generate_per():
 
 def index():
     if request.method=="POST":
-        with open("prompt.txt","r") as f:
+        with open(path,"r") as f:
             prompt=f.read()
         bot = request.form["bot"]
         start_sequence = "\nAI:"
@@ -59,7 +59,7 @@ def index():
         )
         answer = str(response["choices"][0]["text"])
         prompt=str(prompt) + answer
-        with open("prompt.txt", "w") as f:
+        with open(path, "w") as f:
             f.write(prompt)
         print("AI:" + answer)
         return redirect(url_for("index", result="AI: " + answer))
