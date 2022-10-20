@@ -1,8 +1,4 @@
-from cmd import PROMPT
-from tkinter import dialog
 from flask import Flask, redirect, render_template, request, url_for
-import requests
-import json
 import os
 import openai
 
