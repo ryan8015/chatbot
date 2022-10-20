@@ -7,8 +7,8 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-path="/tmp"
-os.chdir(path)
+path="/tmp/words.txt"
+
 
 with open("prompt.txt") as f:
     with open(path, "w") as f1:
@@ -16,7 +16,7 @@ with open("prompt.txt") as f:
             if "ROW" in line:
                 f1.write(line)
 
-
+os.chdir(path)
 
 with open(path, "w") as f:
     f.write("The following is a conversation is with an AI called Sarah, she is very nice, funny and will laugh at anything")
