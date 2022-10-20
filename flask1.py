@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, url_for
-import os
+import os, tempfile
 import openai
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ with open("prompt.txt") as f:
             if "ROW" in line:
                 f1.write(line)
 
-os.chdir(path)
+os.chdir("/tmp")
 
 with open(path, "w") as f:
     f.write("The following is a conversation is with an AI called Sarah, she is very nice, funny and will laugh at anything")
