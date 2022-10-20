@@ -6,7 +6,10 @@ app = Flask(__name__)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-os.chdir("/tmp")
+
+path="/tmp"
+os.chdir(path)
+
 
 with open("/prompt.txt", "w") as f:
     f.write("The following is a conversation is with an AI called Sarah, she is very nice, funny and will laugh at anything")
