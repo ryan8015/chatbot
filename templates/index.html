@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI CHATBOT</title>
+</head>
+
+<body>
+  <h3>GIVE THE AI A PERSONALITY</h3>
+  <t>Default: The following is a conversation is with an AI called Sarah, she is very nice, funny and will laugh at anything</t>
+    <form action="/gen" method="post">
+      <input type="text" name="personality" placeholder="Give me a Personality" required />
+      <input type="submit" value="Generate Personality" />
+    </form>
+  {% if personality %}
+  <div class="personality">{{ personality }}</div>
+  {% endif %}
+
+  <h3>BOT</h3>
+  <form action="/" method="post">
+    <input type="text" name="bot" placeholder="Ask me anything!" required />
+    <input type="submit" value="Generate Response" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
